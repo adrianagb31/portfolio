@@ -37,11 +37,11 @@ const projects = [
           { src: "/kicad-front.png", alt: "Smart Light PCB front render" },
           { src: "/kicad-back.png", alt: "Smart Light PCB back render" }
         ]
-      }
-            {
+      },
+      {
         text:
           "Unfortunately, we tested the final board during exam week and forgot to record it. Since I used a power supply provided by the school, I cannot test it again right now. In the future, I plan to use a battery pack so I can test and demonstrate the board more easily.",
-      },
+      }
     ]
   },
   {
