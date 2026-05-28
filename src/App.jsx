@@ -28,7 +28,7 @@ const projects = [
         text:
           "After the LTspice work, we validated the circuit on a breadboard and adjusted resistor and capacitor values to tune the response. We used hysteresis, also known as a Schmitt trigger behavior, to prevent the LED from flickering when the LDR resistance was close to the switching threshold. We also added a potentiometer so the threshold gap could be adjusted during testing. Once the prototype worked as expected, we moved the design into KiCad for schematic capture and PCB layout.",
         images: [{ src: "/breadboard-stage.png", alt: "Smart Light breadboard prototype" }],
-        video: { src: "/smart-light-breadboard-demo.mov", type: "video/quicktime", title: "Smart Light Breadboard Demo" }
+        video: { src: "/smart-light-breadboard-demo.mp4", type: "video/quicktime", title: "Smart Light Breadboard Demo" }
       },
       {
         text:
@@ -134,7 +134,7 @@ export default function App() {
           </div>
 
           <img
-            src="/adriana-headshot.jpg"
+            src="/adriana-headshot.JPG"
             alt="Adriana Garcia headshot"
             className="profile-photo"
           />
