@@ -121,7 +121,6 @@ export default function App() {
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#resume">Resume</a>
-        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/adrianagarbol/" target="_blank" rel="noreferrer">LinkedIn</a>
       </nav>
 
@@ -142,11 +141,13 @@ export default function App() {
           <div className="about-copy">
             <h2>About me</h2>
             <p>
-              I am an Electrical Engineering student interested in PCB design,
-              embedded systems, analog electronics, and hands-on engineering projects.
+              I am a junior Electrical Engineering student interested in PCB design,
+              avionics, analog electronics, and hands-on engineering projects.
             </p>
             <p>
-              This portfolio shows my projects, technical skills, and resume in a clean and simple format.
+              This portfolio shows a more in-depth explanation of my projects and what
+              they were about. I will keep updating my projects here as they progress, so
+              I have a way to track them.
             </p>
           </div>
         </section>
