@@ -17,17 +17,22 @@ const projects = [
       },
       {
         text:
+          "During the first stage of the project, we moved back and forth between LTspice simulations, breadboarding, and testing. I had to make sure we understood the LDR resistance values because I noticed that different LDRs gave slightly different resistance readings depending on the lighting conditions. To make the threshold adjustable, we added a potentiometer to the voltage divider so we could control when the LED would turn on based on the LDR resistance."
+      },
+      {
+        text:
           "We decided to build a light-sensor PCB because it was a manageable project for learning the full PCB workflow. We started with calculations and LTspice simulations to understand the voltage divider, reference voltage, comparator behavior, MOSFET switching stage, and LED output response.",
         images: [{ src: "/ltspice-smart-light.png", alt: "Smart Light LTspice schematic" }]
       },
       {
         text:
-          "After the LTspice work, we moved into the breadboarding stage to validate the circuit before committing to the PCB layout. We made adjustments to resistor and capacitor values to tune the circuit response. The capacitor was selected so the LED transition would respond at the desired speed, and we measured the LDR behavior under different lighting conditions. Once the prototype worked as expected, we moved the design into KiCad for schematic capture and PCB layout.",
-        images: [{ src: "/breadboard-stage.png", alt: "Smart Light breadboard prototype" }]
+          "After the LTspice work, we validated the circuit on a breadboard and adjusted resistor and capacitor values to tune the response. We used hysteresis, also known as a Schmitt trigger behavior, to prevent the LED from flickering when the LDR resistance was close to the switching threshold. We also added a potentiometer so the threshold gap could be adjusted during testing. Once the prototype worked as expected, we moved the design into KiCad for schematic capture and PCB layout.",
+        images: [{ src: "/breadboard-stage.png", alt: "Smart Light breadboard prototype" }],
+        video: { src: "/smart-light-breadboard-demo.mov", type: "video/quicktime", title: "Smart Light Breadboard Demo" }
       },
       {
         text:
-          "In KiCad, we converted the tested circuit into a manufacturable PCB. We worked on component placement, routing, through-hole and surface-mount footprints, mounting holes, power input, and the final board layout. This stage helped us understand how schematic decisions translate into real physical constraints on a PCB.",
+          "In KiCad, we converted the tested circuit into a manufacturable PCB. We worked on component placement, routing, through-hole and surface-mount footprints, mounting holes, power input, and the final board layout. I learned how trace width depends on the amount of current flowing through a path, and I also learned the importance of adding mounting holes early in the placement process. This stage also helped me understand PCB layering and how schematic decisions translate into real physical constraints on a board.",
         images: [
           { src: "/kicad-front.png", alt: "Smart Light PCB front render" },
           { src: "/kicad-back.png", alt: "Smart Light PCB back render" }
@@ -91,17 +96,12 @@ const projects = [
     title: "Radio Project",
     image: null,
     overview:
-      "The project page will be updated soon.",
+      "Coming soon.",
     shortDescription:
-      "Upcoming project ",
+      "Coming soon.",
     processBlocks: [
       {
-        text:
-          "Soon"
-      },
-      {
-        text:
-          "I will update this page soon."
+        text: "Coming soon."
       }
     ]
   }
@@ -121,6 +121,7 @@ export default function App() {
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#resume">Resume</a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/adrianagarbol/" target="_blank" rel="noreferrer">LinkedIn</a>
       </nav>
 
@@ -133,7 +134,7 @@ export default function App() {
           </div>
 
           <img
-            src="/adriana-headshot.JPG"
+            src="/adriana-headshot.jpg"
             alt="Adriana Garcia headshot"
             className="profile-photo"
           />
@@ -141,13 +142,11 @@ export default function App() {
           <div className="about-copy">
             <h2>About me</h2>
             <p>
-              I am a junior Electrical Engineering student interested in PCB design,
-              avionics, analog electronics, and hands-on engineering projects.
+              I am an Electrical Engineering student interested in PCB design,
+              embedded systems, analog electronics, and hands-on engineering projects.
             </p>
             <p>
-              This portfolio shows a more in-depth explanation of my projects and what
-              they were about. I will keep updating my projects here as they progress, so
-              I have a way to track them.
+              This portfolio shows my projects, technical skills, and resume in a clean and simple format.
             </p>
           </div>
         </section>
@@ -245,7 +244,7 @@ function ProjectPage({ project, onBack }) {
               {block.video && (
                 <div className="process-video-wrapper">
                   <video className="process-video" controls>
-                    <source src={block.video.src} type="video/mp4" />
+                    <source src={block.video.src} type={block.video.type || "video/mp4"} />
                     Your browser does not support the video tag.
                   </video>
                   <p className="video-caption">{block.video.title}</p>
